@@ -1,0 +1,246 @@
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --accent: #3b82f6;
+  --muted: #6b7280;
+  --glass: rgba(255, 255, 255, 0.6);
+  --radius: 12px;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background: linear-gradient(180deg, var(--bg), #eef2ff);
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Page wrapper */
+.app {
+  width: min(1100px, 95vw);
+  background: var(--card);
+  border-radius: calc(var(--radius));
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.12);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 0;
+  min-height: 70vh;
+}
+
+/* Header / nav area */
+header {
+  grid-column: 1/-1;
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(
+    90deg,
+    rgba(59, 130, 246, 0.08),
+    rgba(99, 102, 241, 0.03)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), #7c3aed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.15);
+}
+nav ul {
+  display: flex;
+  gap: 0.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.45rem 0.65rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+nav a:hover {
+  background: var(--glass);
+  color: var(--accent);
+}
+
+/* Main content */
+main {
+  padding: 1.5rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+article.card {
+  background: linear-gradient(180deg, #fff, #fbfdff);
+  border-radius: 10px;
+  padding: 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.03);
+  box-shadow: 0 4px 18px rgba(2, 6, 23, 0.06);
+}
+header.card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+h1 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+p.lead {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Feature list */
+ul.features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+ul.features li {
+  padding: 0.6rem;
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.02);
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex: 0 0 12px;
+}
+
+/* Aside (right column) */
+aside {
+  padding: 1.5rem;
+  border-left: 1px solid rgba(15, 23, 42, 0.03);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.6), transparent);
+  min-height: 100%;
+}
+.search {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.search input {
+  flex: 1;
+  padding: 0.6rem;
+  border-radius: 10px;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+.search button {
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  border: 0;
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+}
+
+/* Form */
+form.fieldset {
+  display: grid;
+  gap: 0.6rem;
+}
+label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+textarea {
+  min-height: 90px;
+}
+.btn-row {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+.btn {
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px;
+  border: 0;
+  font-weight: 700;
+}
+.btn.primary {
+  background: var(--accent);
+  color: white;
+}
+.btn.ghost {
+  background: transparent;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+/* Footer */
+footer {
+  grid-column: 1/-1;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(90deg, rgba(99, 102, 241, 0.02), transparent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+small {
+  color: var(--muted);
+}
+
+/* Responsive */
+@media (max-width: 880px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+  aside {
+    border-left: 0;
+    border-top: 1px solid rgba(15, 23, 42, 0.03);
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

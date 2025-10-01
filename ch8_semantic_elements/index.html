@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Semantic Demo — HTML & CSS Only</title>
+    <meta
+      name="description"
+      content="A small web application built using only HTML semantic elements and CSS (no JS)."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app" role="application" aria-labelledby="app-title">
+      <!-- Page header with nav -->
+      <header>
+        <div class="brand">
+          <div class="logo" aria-hidden>SD</div>
+          <div>
+            <div id="app-title" style="font-weight: 800">Semantic Demo</div>
+            <div style="font-size: 0.85rem; color: var(--muted)">
+              HTML &amp; CSS — accessible & semantic
+            </div>
+          </div>
+        </div>
+
+        <nav aria-label="Main navigation">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Main content and aside split -->
+      <main>
+        <section aria-labelledby="intro" style="margin-bottom: 1rem">
+          <div
+            class="card"
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              gap: 1rem;
+            "
+          >
+            <div>
+              <h1 id="intro">Build with semantic HTML</h1>
+              <p class="lead">
+                This small single-file web app demonstrates how to structure a
+                page using semantic elements: <code>&lt;header&gt;</code>,
+                <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>,
+                <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>,
+                <code>&lt;aside&gt;</code>, and <code>&lt;footer&gt;</code>. No
+                JavaScript — just HTML &amp; CSS.
+              </p>
+            </div>
+            <figure style="margin: 0; min-width: 160px; text-align: center">
+              <svg
+                width="72"
+                height="72"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden
+              >
+                <rect width="24" height="24" rx="6" fill="#eef2ff"></rect>
+                <path
+                  d="M8 12h8M8 16h8M8 8h8"
+                  stroke="#6366f1"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                ></path>
+              </svg>
+              <figcaption style="font-size: 0.85rem; color: var(--muted)">
+                Semantic layout
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section id="features" aria-labelledby="features-title">
+          <article class="card" aria-labelledby="features-title">
+            <div
+              class="card-title"
+              style="display: flex; flex-direction: column; gap: 0.5rem"
+            >
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                "
+              >
+                <h2 id="features-title" style="font-size: 1rem; margin: 0">
+                  Key features
+                </h2>
+              </div>
+              <p class="lead">
+                Examples of semantic markup that improve accessibility and
+                maintainability.
+              </p>
+            </div>
+
+            <ul class="features" style="margin-top: 0.75rem">
+              <li>
+                <span class="dot" aria-hidden></span
+                ><strong>Semantic elements:</strong>&nbsp;header, nav, main,
+                article, section, aside, footer, figure, figcaption.
+              </li>
+              <li>
+                <span class="dot" aria-hidden></span
+                ><strong>Accessible labels:</strong>&nbsp;aria-labels and
+                landmarks help screen readers.
+              </li>
+              <li>
+                <span class="dot" aria-hidden></span
+                ><strong>Responsive layout:</strong>&nbsp;grid + media queries
+                for small screens.
+              </li>
+              <li>
+                <span class="dot" aria-hidden></span
+                ><strong>No JavaScript:</strong>&nbsp;works even when scripts
+                are disabled.
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <section aria-labelledby="articles" style="margin-top: 1rem">
+          <div class="grid">
+            <article class="card" aria-labelledby="article-1">
+              <h3 id="article-1" style="margin: 0 0 0.5rem 0">
+                Example article
+              </h3>
+              <p style="margin: 0 0 0.75rem 0; color: var(--muted)">
+                Articles are self-contained pieces of content and can be
+                syndicated independently.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                at dui nec arcu pretium tempor. Suspendisse potenti.
+              </p>
+              <footer
+                style="
+                  margin-top: 0.75rem;
+                  font-size: 0.85rem;
+                  color: var(--muted);
+                "
+              >
+                Published <time datetime="2025-10-01">Oct 1, 2025</time>
+              </footer>
+            </article>
+
+            <article class="card" aria-labelledby="article-2">
+              <h3 id="article-2" style="margin: 0 0 0.5rem 0">
+                Another article
+              </h3>
+              <p style="margin: 0 0 0.75rem 0; color: var(--muted)">
+                Use articles for blog posts, news items, or contiguous sections
+                of related content.
+              </p>
+              <p>
+                Praesent tristique, nunc in cursus sodales, ipsum magna porta
+                mi, id egestas arcu elit sit amet justo.
+              </p>
+              <footer
+                style="
+                  margin-top: 0.75rem;
+                  font-size: 0.85rem;
+                  color: var(--muted);
+                "
+              >
+                Tags: <span>HTML</span>, <span>Accessibility</span>
+              </footer>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <aside>
+        <div style="margin-bottom: 1rem">
+          <form
+            class="search"
+            role="search"
+            aria-label="Search form"
+            onsubmit="return false;"
+          >
+            <input
+              type="search"
+              placeholder="Search articles"
+              aria-label="Search articles"
+            />
+            <button type="submit" aria-label="Search">Go</button>
+          </form>
+
+          <section aria-labelledby="contact" style="margin-top: 0.6rem">
+            <h4 id="contact" style="margin: 0 0 0.5rem 0">Contact</h4>
+            <form
+              class="fieldset"
+              action="#"
+              method="post"
+              aria-describedby="contact-desc"
+            >
+              <div
+                id="contact-desc"
+                style="
+                  font-size: 0.85rem;
+                  color: var(--muted);
+                  margin-bottom: 0.5rem;
+                "
+              >
+                Send a short message — this form is non-functional (no JS or
+                backend).
+              </div>
+              <label for="name">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Your name"
+              />
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="text"
+                placeholder="you@example.com"
+              />
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Write something..."
+              ></textarea>
+              <div class="btn-row">
+                <button class="btn ghost" type="reset">Reset</button>
+                <button class="btn primary" type="submit">Send</button>
+              </div>
+            </form>
+          </section>
+        </div>
+
+        <section aria-labelledby="about">
+          <h4 id="about" style="margin: 0 0 0.5rem 0">About this demo</h4>
+          <p style="margin: 0; color: var(--muted); font-size: 0.95rem">
+            A compact demo that shows how semantic elements map to page areas.
+            Great starting point for static sites, design systems, and
+            accessibility-focused projects.
+          </p>
+        </section>
+      </aside>
+
+      <footer>
+        <small>&copy; 2025 Semantic Demo — HTML &amp; CSS only</small>
+        <small
+          >Built with <abbr title="HyperText Markup Language">HTML</abbr> &amp;
+          <abbr title="Cascading Style Sheets">CSS</abbr></small
+        >
+      </footer>
+    </div>
+  </body>
+</html>

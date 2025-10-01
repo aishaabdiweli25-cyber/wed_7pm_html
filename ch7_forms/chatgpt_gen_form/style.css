@@ -1,0 +1,96 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #74b9ff, #a29bfe);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Form Container */
+.form-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  width: 400px;
+}
+
+.form-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2d3436;
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #2d3436;
+}
+
+/* Inputs, Select, Textarea */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 18px;
+  border: 1px solid #dfe6e9;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #0984e3;
+  outline: none;
+  box-shadow: 0 0 6px rgba(9, 132, 227, 0.4);
+}
+
+/* Groups */
+.radio-group,
+.checkbox-group {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 18px;
+}
+
+.radio-group label,
+.checkbox-group label {
+  font-weight: normal;
+  color: #2d3436;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background: #0984e3;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #74b9ff;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+ 
